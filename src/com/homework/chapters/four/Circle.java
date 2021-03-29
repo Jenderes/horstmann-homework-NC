@@ -12,7 +12,7 @@ public class Circle extends Shape implements Cloneable {
     protected Circle clone() throws CloneNotSupportedException {
         try {
             Circle cloneCircle = (Circle) super.clone();
-            cloneCircle.point = new Point(point.getX(), point.getY());
+            cloneCircle.point = new Point(this.point.getX(), this.point.getY());
             return cloneCircle;
         } catch (CloneNotSupportedException e) {
             return null;
@@ -20,10 +20,15 @@ public class Circle extends Shape implements Cloneable {
     }
 
     @Override
+    public Point getCenter() {
+        return this.point;
+    }
+
+    @Override
     public String toString() {
         return "Circle{" +
-                "radius=" + radius +
-                ", point=" + point +
+                "radius=" + this.radius +
+                ", point=" + this.point +
                 '}';
     }
 }

@@ -11,7 +11,7 @@ abstract class Shape {
         point.x += dx;
         point.y += dy;
     }
-
+    public abstract Point getCenter();
     @Override
     public String toString() {
         return "Shape{" +

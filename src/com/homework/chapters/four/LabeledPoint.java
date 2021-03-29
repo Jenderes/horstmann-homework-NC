@@ -5,9 +5,6 @@ import java.util.Objects;
 public class LabeledPoint extends Point {
 
     private String label;
-    private double x;
-    private double y;
-
 
     public LabeledPoint(String label, double x, double y) {
         super(x, y);

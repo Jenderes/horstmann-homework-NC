@@ -34,12 +34,19 @@ public class ChapterThreeMain {
 
     // 1 exercise
     private static double average(Measurable[] objects) {
-        return Stream.of(objects).mapToDouble(Measurable::getMeasure).average().orElse(0);
+        return Stream.of(objects)
+                .mapToDouble(Measurable::getMeasure)
+                .average()
+                .orElse(0);
     }
 
     // 2 exercise
     private static String MeasurableLargest(Measurable[] objects) {
-        Employee employee = (Employee) Stream.of(objects).filter(object -> object instanceof Employee).max(Comparator.comparingDouble(Measurable::getMeasure)).get();
+        Employee employee = (Employee) Stream.of(objects)
+                .filter(object -> object instanceof Employee)
+                .max(Comparator.comparingDouble(Measurable::getMeasure))
+                .get();
+
         return employee.getFullName();
     }
 

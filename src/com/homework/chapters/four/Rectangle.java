@@ -1,6 +1,6 @@
 package com.homework.chapters.four;
 
-public class Rectangle extends Shape implements Cloneable{
+public class Rectangle extends Shape implements Cloneable {
     private double width;
     private double height;
 
@@ -14,7 +14,7 @@ public class Rectangle extends Shape implements Cloneable{
     protected Rectangle clone() throws CloneNotSupportedException {
         try {
             Rectangle cloneRectangle = (Rectangle) super.clone();
-            cloneRectangle.point = new Point(point.getX(),point.getY());
+            cloneRectangle.point = new Point(this.point.getX(), this.point.getY());
             return cloneRectangle;
         } catch (CloneNotSupportedException e) {
             return null;
@@ -22,11 +22,19 @@ public class Rectangle extends Shape implements Cloneable{
     }
 
     @Override
+    public Point getCenter() {
+        return new Point(
+                (this.point.getX() + this.width) / 2,
+                (this.point.getY() + this.height) / 2
+        );
+    }
+
+    @Override
     public String toString() {
         return "Rectangle{" +
-                "width=" + width +
-                ", height=" + height +
-                ", point=" + point +
+                "width=" + this.width +
+                ", height=" + this.height +
+                ", point=" + this.point +
                 '}';
     }
 }
